@@ -29,7 +29,7 @@ h1 {
  .navbar-nav  li a:hover {
      color: #b5807e !important;
  }
- 
+
  /* form */
 
  .form-control {
@@ -48,9 +48,8 @@ h1 {
  /* footer */
 
  .footer {
- 	position: absolute;
+    position: absolute;
  	text-align: center;
- 	bottom: 0;
  	width: 100%;
  	height: 60px;
  	background-color: #e2c2c1;
