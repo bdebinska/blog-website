@@ -1,3 +1,5 @@
+/* general */
+
 body {
     background-color: #f7dad9;
     font-family: 'Montserrat', sans-serif;
@@ -8,10 +10,14 @@ h1 {
     padding-bottom: 20px;
     font-weight: bold;
 }
+
 .container-fluid, .nav{
     margin-left: 8%;
     margin-right: 8%;
+    width: auto;
 }
+
+/* navbar */
 
  .navbar {
      padding-top: 30px;
@@ -23,6 +29,23 @@ h1 {
  .navbar-nav  li a:hover {
      color: #b5807e !important;
  }
+ 
+ /* form */
+
+ .form-control {
+     background-color: transparent;
+     border-width: thin;
+     border-color: #343a40;
+ }
+
+ .form-control:focus {
+     background-color: transparent;
+     border-color: #343a40;
+     border-width: thin;
+     -webkit-box-shadow: none;
+ }
+
+ /* footer */
 
  .footer {
  	position: absolute;
