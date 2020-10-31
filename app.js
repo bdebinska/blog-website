@@ -22,7 +22,7 @@ app.use(express.static("public"));
 // main page
 
 app.get("/", function(req, res) {
-    res.render("home.ejs", {homeStartingContent: homeStartingContent});
+    res.render("home.ejs", {homeStartingContent: homeStartingContent, posts: posts});
 });
 
 // about us page
