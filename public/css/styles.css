@@ -1,8 +1,12 @@
 /* general */
-
+html {
+    position: relative;
+    min-height: 100%;
+}
 body {
     background-color: #f7dad9;
     font-family: 'Montserrat', sans-serif;
+    padding-bottom: 60px;
 }
 
 h1 {
@@ -12,6 +16,7 @@ h1 {
 }
 
 .container-fluid, .nav{
+    position: relative;
     margin-left: 8%;
     margin-right: 8%;
     width: auto;
@@ -49,10 +54,12 @@ h1 {
 
  .footer {
     position: absolute;
+    bottom: 0;
  	text-align: center;
  	width: 100%;
  	height: 60px;
  	background-color: #e2c2c1;
+    overflow: visible;
  }
 
  .footer p {

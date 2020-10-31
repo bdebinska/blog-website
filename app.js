@@ -22,7 +22,7 @@ app.use(express.static("public"));
 // main page
 
 app.get("/", function(req, res) {
-    res.render("home.ejs", {homeStartingContent: homeStartingContent, posts: posts});
+    res.render("home.ejs", {homeStartingContent: homeStartingContent, posts: posts, });
 });
 
 // about us page
@@ -48,9 +48,24 @@ app.post("/compose", function(req, res) {
         title: req.body.postTitle,
         content: req.body.postBody
     }
-
     posts.push(post);
     res.redirect("/");
+});
+
+// individual posts
+
+app.get("/posts/:post", function(req, res) {
+
+    posts.forEach(function(post) {
+
+        const postUrl = post.title.replace(/\s+/g, '-').toLowerCase();
+
+        if (req.params.post == postUrl) {
+            res.render("post", {title: post.title, content: post.content});
+        } else {
+            res.redirect("/");
+        }
+    });
 });
 
 app.listen(3000, function() {

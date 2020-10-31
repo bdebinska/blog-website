@@ -3,9 +3,21 @@
 <h1>Home</h1>
 <p> <%= homeStartingContent %> </p>
 
-<% for (var i = 0; i < posts.length; i++) { %>
-    <h1> <%= posts[i].title %> </h1>
-    <p> <%= posts[i].content %> </p>
-<% } %>
+<% const maxLength = 100; %>
+<% posts.forEach(function(post) { %>
+    <% let content = post.content; %>
+    <% let title = post.title; %>
+    <% if (content.length > maxLength) { %>
+        <% content = content.substring(0, maxLength) + "..."; %>
+        <h1> <%= post.title %> </h1>
+        <p> <%= content %> </p>
+        <form action="/" method="post">
+            <button type="submit" name="readMore" class="btn btn-outline-dark btn-sm">Read more...</button>
+        </form>
+    <% } else { %>
+        <h1> <%= post.title %> </h1>
+        <p> <%= content %> </p>
+        <% } %>
+<% }); %>
 
 <%- include("partials/footer") -%>
